@@ -603,37 +603,38 @@
             newCard.className = 'despesa-card';
             newCard.innerHTML = `
                 <div class="despesa-header">
-                    <span class="despesa-numero">Despesa ${despesaCount}</span>
-                    <button type="button" class="remove-btn" onclick="removerCard(this)">Remover</button>
+                    <span class="despesa-numero">Item ${despesaCount}</span>
+                    <button type="button" class="remove-btn" onclick="removerCard(this)">✕</button>
                 </div>
-                <label>Data:</label>
+                
+                <label>Data da Despesa:</label>
                 <input type="date" class="data-despesa" required>
                 
                 <label>Tipo:</label>
                 <select class="tipo-despesa" required>
-                    <option value="">Selecione...</option>
+                    <option value="">Selecione o tipo...</option>
                     <optgroup label="Equipamentos">
-                        <option value="I.a">Desktop/Notebook/Tablet</option>
-                        <option value="I.b">Monitor/Teclado/Mouse</option>
+                        <option value="I.a">Computador/Notebook</option>
+                        <option value="I.b">Periféricos</option>
                         <option value="I.c">Câmera/Webcam</option>
-                        <option value="I.d">Áudio (Headset/Fone)</option>
-                        <option value="I.e">Impressora/Scanner</option>
+                        <option value="I.d">Áudio</option>
+                        <option value="I.e">Impressora</option>
                         <option value="I.f">Armazenamento</option>
-                        <option value="I.g">Rede (Roteador/Modem)</option>
-                        <option value="I.h">Energia (Nobreak/UPS)</option>
-                        <option value="I.i">Docking/Hub USB</option>
-                        <option value="I.j">Gravador c/ IA</option>
-                        <option value="I.k">Painel programável</option>
+                        <option value="I.g">Rede</option>
+                        <option value="I.h">Energia</option>
+                        <option value="I.i">Hub/Dock</option>
+                        <option value="I.j">Gravador IA</option>
+                        <option value="I.k">Automação</option>
                     </optgroup>
                     <optgroup label="Software">
-                        <option value="II.a">Sistema Operacional</option>
+                        <option value="II.a">Sistema</option>
                         <option value="II.b">Office</option>
                         <option value="II.c">PDF</option>
                         <option value="II.d">Antivírus</option>
                         <option value="II.e">Nuvem</option>
-                        <option value="II.f">IA Profissional</option>
-                        <option value="II.g">Base Jurídica</option>
-                        <option value="II.h">Videoconferência</option>
+                        <option value="II.f">IA</option>
+                        <option value="II.g">Jurídico</option>
+                        <option value="II.h">Comunicação</option>
                     </optgroup>
                 </select>
                 
@@ -641,7 +642,7 @@
                 <input type="text" class="descricao" placeholder="Ex: MacBook Pro" required>
                 
                 <label>Valor (R$):</label>
-                <input type="number" class="valor" step="0.01" min="0" required onchange="calcularTotal()">
+                <input type="number" class="valor" step="0.01" min="0" placeholder="0,00" required onchange="calcularTotal()">
             `;
             container.appendChild(newCard);
         }
